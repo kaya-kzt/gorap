@@ -1,4 +1,4 @@
-package gorap
+package handy
 
 import (
 	"os"

@@ -1,4 +1,4 @@
-package gorap
+package handy
 
 import (
 	"testing"
@@ -13,8 +13,8 @@ var (
 )
 
 func TestOverlap(t *testing.T) {
-	p1 := Period{start: t1, end: t3}
-	p2 := Period{start: t4, end: t2}
+	p1 := Period{Start: t1, End: t3}
+	p2 := Period{Start: t4, End: t2}
 	result := p1.Overlap(&p2)
 	expected := true
 	if result != expected {

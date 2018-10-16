@@ -1,4 +1,4 @@
-package gorap
+package handy
 
 // refered from https://github.com/vimeo/go-util/blob/master/util/cmd.go
 
@@ -10,6 +10,15 @@ import (
 
 // ErrCommandTimeout is the error used when a command times out before completing.
 var ErrCommandTimeout = errors.New("command timed out")
+
+// RunCommand is a fuction that run a command,
+func RunCommand(cmd *exec.Cmd) error {
+	err := cmd.Start()
+	if err != nil {
+		return err
+	}
+	return nil
+}
 
 // RunCommandWithTimeout is a fuction that run a command,
 // killing it if it does not finish before the specified timeout

@@ -1,27 +1,27 @@
-package gorap
+package handy
 
 import (
 	"fmt"
 	"time"
 )
 
-var timeFormat = time.RFC3339Nano
+var timeFormat = time.RFC3339
 
 // Period represents specific term
 type Period struct {
-	start, end time.Time
+	Start, End time.Time
 }
 
 // Overlap returns true if two Peridod p & p2 are overlaps
 func (p *Period) Overlap(p2 *Period) bool {
-	if p2.start.Before(p.end) && p.start.Before(p2.end) {
+	if p2.Start.Before(p.End) && p.Start.Before(p2.End) {
 		return true
 	}
 	return false
 }
 
 func (p *Period) String() string {
-	return fmt.Sprintln(p.start.Format(timeFormat), "->", p.end.Format(timeFormat))
+	return fmt.Sprintln(p.Start.Format(timeFormat), "->", p.End.Format(timeFormat))
 }
 
 // StringToTime fuction parses string to Time with timeFormat format

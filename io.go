@@ -1,4 +1,4 @@
-package gorap
+package handy
 
 import (
 	"log"
@@ -7,7 +7,7 @@ import (
 )
 
 // OpenFile function opens given path file.
-// if a file doesn't exist, it will created.
+// if a file doesn't exist, it will be created.
 func OpenFile(path string, perm os.FileMode) (f *os.File, err error) {
 	// make directories at first
 	d := filepath.Dir(path)
